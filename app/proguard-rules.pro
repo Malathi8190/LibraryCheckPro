@@ -15,3 +15,10 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class org.xwalk.core.** {
+*;
+}
+-keep class org.chromium.** {
+*;
+}
+-keepattributes **
