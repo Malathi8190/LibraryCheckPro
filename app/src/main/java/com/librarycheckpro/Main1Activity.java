@@ -1,12 +1,18 @@
 package com.librarycheckpro;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.widget.Button;
 import android.widget.Toast;
 
+import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
+import org.xwalk.core.XWalkResourceClient;
+import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
 
 
@@ -17,15 +23,40 @@ public class Main1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
-        xWalkWebView=(XWalkView)findViewById(R.id.xwalkWebView);
+        xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
         xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
 
         // turn on debugging
         XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
+        xWalkWebView.setUIClient(new XWalkUIClient(xWalkWebView) {
+            public boolean onConsoleMessage(ConsoleMessage cm) {
+                Log.e("MyApplication", cm.message() + " -- From line "
+                        + cm.lineNumber() + " of "
+                        + cm.sourceId());
+                return true;
+            }
+
+            @Override
+            public void onPageLoadStarted(XWalkView view, String url) {
+                System.out.println("onPageLoadStarted  " + url);
+            }
+
+            @Override
+            public void onPageLoadStopped(XWalkView view, String url,
+                                          XWalkUIClient.LoadStatus status) {
+                System.out.println("onPageLoadStopped  " + status);
+            }
+        });
+        xWalkWebView.setResourceClient(new XWalkResourceClient(xWalkWebView) {
+            @Override
+            public void onReceivedHttpAuthRequest(XWalkView view, XWalkHttpAuthHandler handler, String host, String realm) {
+                System.out.println("onReceivedHttpAuthRequest");
+            }
+        });
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         if (xWalkWebView != null) {
             xWalkWebView.pauseTimers();
@@ -34,7 +65,7 @@ public class Main1Activity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         if (xWalkWebView != null) {
             xWalkWebView.resumeTimers();
@@ -43,11 +74,22 @@ public class Main1Activity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         if (xWalkWebView != null) {
             xWalkWebView.onDestroy();
         }
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (xWalkWebView != null) {
+            xWalkWebView.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    protected void onNewIntent(Intent intent) {
+        if (xWalkWebView != null) {
+            xWalkWebView.onNewIntent(intent);
+        }
+    }
 }
