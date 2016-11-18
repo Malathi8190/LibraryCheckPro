@@ -1,1 +1,1 @@
-include ':app', ':xwalk_core_library_java'
+include ':app'
