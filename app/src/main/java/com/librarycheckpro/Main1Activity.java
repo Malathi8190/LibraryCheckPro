@@ -100,7 +100,7 @@ public class Main1Activity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_main1);
 
             //Initializing the ImageView
             imageView = (ImageView) findViewById(R.id.imageView);
