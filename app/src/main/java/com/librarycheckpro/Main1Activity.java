@@ -10,23 +10,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
-/*import org.xwalk.core.XWalkHttpAuthHandler;
+import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
-import org.xwalk.core.XWalkView;*/
+import org.xwalk.core.XWalkView;
 
 
 public class Main1Activity extends AppCompatActivity {
-   /* private XWalkView xWalkWebView;
+    private XWalkView xWalkWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main1);*/
-      /*  xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
+        setContentView(R.layout.activity_main);
+        xWalkWebView = (XWalkView) findViewById(R.id.xwalkview);
         xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
 
         // turn on debugging
@@ -93,14 +91,17 @@ public class Main1Activity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         if (xWalkWebView != null) {
             xWalkWebView.onNewIntent(intent);
-        }*/
+        }
         //Declaring our ImageView
-        private ImageView imageView;
+
+
+
+    /*private ImageView imageView;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main1);
+            setContentView(R.layout.activity_main);
 
             //Initializing the ImageView
             imageView = (ImageView) findViewById(R.id.imageView);
@@ -109,9 +110,10 @@ public class Main1Activity extends AppCompatActivity {
             Picasso.with(this)
                     .load("https://www.simplifiedcoding.net/wp-content/uploads/2015/10/advertise.png")
                     .placeholder(R.drawable.placeholder)   // optional
-                    .error(R.drawable.wrong)      // optional
+                    .error(R.drawable.error)      // optional
                     .resize(400,400)                        // optional
                     .into(imageView);
         }
+    }*/
     }
-
+}
