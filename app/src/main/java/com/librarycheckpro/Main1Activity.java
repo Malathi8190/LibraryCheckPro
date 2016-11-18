@@ -23,8 +23,8 @@ public class Main1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        xWalkWebView = (XWalkView) findViewById(R.id.xwalkview);
+        setContentView(R.layout.activity);
+        xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
         xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
 
         // turn on debugging
