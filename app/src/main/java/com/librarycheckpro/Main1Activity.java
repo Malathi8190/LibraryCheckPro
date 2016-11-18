@@ -4,12 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.webkit.ConsoleMessage;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
-
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
@@ -23,7 +18,7 @@ public class Main1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity);
+        setContentView(R.layout.user);
         xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
         xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
 
@@ -92,28 +87,5 @@ public class Main1Activity extends AppCompatActivity {
         if (xWalkWebView != null) {
             xWalkWebView.onNewIntent(intent);
         }
-        //Declaring our ImageView
-
-
-
-    /*private ImageView imageView;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-
-            //Initializing the ImageView
-            imageView = (ImageView) findViewById(R.id.imageView);
-
-            //Loading Image from URL
-            Picasso.with(this)
-                    .load("https://www.simplifiedcoding.net/wp-content/uploads/2015/10/advertise.png")
-                    .placeholder(R.drawable.placeholder)   // optional
-                    .error(R.drawable.error)      // optional
-                    .resize(400,400)                        // optional
-                    .into(imageView);
-        }
-    }*/
     }
 }
