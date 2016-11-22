@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.ConsoleMessage;
+
+import org.xwalk.core.XWalkActivity;
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
@@ -12,8 +14,9 @@ import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
 
 
-public class Main1Activity extends AppCompatActivity {
+public class Main1Activity extends XWalkActivity {
     private XWalkView xWalkWebView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,4 +91,10 @@ public class Main1Activity extends AppCompatActivity {
             xWalkWebView.onNewIntent(intent);
         }
     }
+    @Override
+    protected void onXWalkReady() {
+        xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
+
+    }
+
 }
