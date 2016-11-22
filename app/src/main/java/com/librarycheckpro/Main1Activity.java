@@ -23,7 +23,8 @@ public class Main1Activity extends XWalkActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user);
         xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
-        xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
+
+       // xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
 
         // turn on debugging
         XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
