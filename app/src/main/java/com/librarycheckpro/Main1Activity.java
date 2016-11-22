@@ -14,7 +14,7 @@ import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
 
 
-public class Main1Activity extends XWalkActivity {
+public class Main1Activity extends AppCompatActivity {
     private XWalkView xWalkWebView;
 
 
@@ -24,7 +24,7 @@ public class Main1Activity extends XWalkActivity {
         setContentView(R.layout.user);
         xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
 
-       // xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
+        xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
 
         // turn on debugging
         XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
@@ -91,11 +91,6 @@ public class Main1Activity extends XWalkActivity {
         if (xWalkWebView != null) {
             xWalkWebView.onNewIntent(intent);
         }
-    }
-    @Override
-    protected void onXWalkReady() {
-        xWalkWebView.load("https://mail.zoho.com/zm/#mail/folder/inbox", null);
-
     }
 
 }
