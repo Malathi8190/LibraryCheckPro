@@ -29,5 +29,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     //compile 'org.xwalk:xwalk_core_library:18.48.477.13'
     //compile 'com.github.answerzdigital:mylibapplication:0.0.4'
-    //compile 'com.github.malathi8190:librarycheckpro:0.0.13'
+    //compile 'com.github.malathi8190:librarycheckpro:0.0.14'
 }
