@@ -23,8 +23,7 @@ public class Main1Activity extends XWalkActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user);
         xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
-
-   }
+    }
 
     @Override
     protected void onXWalkReady() {
