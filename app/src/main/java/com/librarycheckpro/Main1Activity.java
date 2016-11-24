@@ -14,7 +14,7 @@ import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
 
 
-public class Main1Activity extends AppCompatActivity {
+public class Main1Activity extends XWalkActivity {
     private XWalkView xWalkWebView;
 
 
@@ -24,15 +24,16 @@ public class Main1Activity extends AppCompatActivity {
         setContentView(R.layout.user);
         xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
 
-   /* }
+   }
 
     @Override
     protected void onXWalkReady() {
         xWalkWebView.load("https://crosswalk-project.org/documentation/shared_mode.html", null);
 
     }
-}*/
-        // turn on debugging
+}
+
+       /* // turn on debugging
         XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
         xWalkWebView.setUIClient(new XWalkUIClient(xWalkWebView) {
             public boolean onConsoleMessage(ConsoleMessage cm) {
@@ -97,7 +98,7 @@ public class Main1Activity extends AppCompatActivity {
         if (xWalkWebView != null) {
             xWalkWebView.onNewIntent(intent);
         }
-    }
-}
+    }*/
+
 
 
