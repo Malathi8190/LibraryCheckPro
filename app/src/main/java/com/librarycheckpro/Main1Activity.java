@@ -23,7 +23,7 @@ public class Main1Activity extends Activity {
 
         Picasso.with(this)
                 .load("https://goo.gl/images/h7bg4m")
-                .placeholder(R.mipmap.ic_launcher)
+              //  .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ex)
                 .into(imageView);
     }
