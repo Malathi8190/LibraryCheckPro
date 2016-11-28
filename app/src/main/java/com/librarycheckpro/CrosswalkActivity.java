@@ -3,8 +3,8 @@ package com.librarycheckpro;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import org.xwalk.core.XWalkPreferences;
-import org.xwalk.core.XWalkView;
+/*import org.xwalk.core.XWalkPreferences;
+import org.xwalk.core.XWalkView;*/
 
 public class CrosswalkActivity extends AppCompatActivity {
     /*private XWalkView xWalkWebView;
