@@ -7,7 +7,7 @@ import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkView;
 
 public class CrosswalkActivity extends AppCompatActivity {
-    private XWalkView xWalkWebView;
+    /*private XWalkView xWalkWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class CrosswalkActivity extends AppCompatActivity {
         if (xWalkWebView != null) {
             xWalkWebView.onDestroy();
         }
-    }
+    }*/
 
 }
 
